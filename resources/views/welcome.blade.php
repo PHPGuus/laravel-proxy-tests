@@ -22,7 +22,15 @@
         <br />
         <h2>Request headers</h2>
         @foreach(request()->header() as $requestHeader => $value)
-            {{ \Illuminate\Support\Str::upper($requestHeader) }}: {{ $value }}<br />
+            {{ \Illuminate\Support\Str::upper($requestHeader) }}:&nbsp;
+            @if(is_array($value))
+                [&nbsp;
+                @foreach($value as $item) {{ $item }},&nbsp; @endforeach
+                ]
+            @else
+                {{ $value }}
+            @endif
+            <br />
         @endforeach
     </body>
 </html>
