@@ -19,7 +19,9 @@
         Remote address: {{ $_SERVER['REMOTE_ADDR'] }}<br />
         <hr />
         Url: {{ url('/') }}
-        <br /><h2>Request headers</h2>
+        <br />
+        <h2>Request headers</h2>
+        What?
         @foreach(request()->header() as $requestHeader => $value) {
             {{ $requestHeader }}: <br />
         @endforeach
