@@ -22,8 +22,8 @@
         <br />
         <h2>Request headers</h2>
         What?
-        @foreach(request()->header() as $requestHeader => $value) {
-            {{ $requestHeader }}: <br />
+        @foreach(request()->header() as $requestHeader => $value)
+            {{ \Illuminate\Support\Str::upper($requestHeader) }}: {{ $value }}<br />
         @endforeach
     </body>
 </html>
